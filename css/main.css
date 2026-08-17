@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    background-color: #f3f4f6;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #1f2937;
+    margin: 0;
+    padding: 20px;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #111827;
+}
+
+/* Сетка/Доска карточек */
+.bulletin-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Карточка */
+.game-card {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.game-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Изображение и бейдж */
+.game-card__image {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    background-color: #3b82f6;
+    overflow: hidden;
+}
+
+.game-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.game-card__badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #ef4444;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Контент карточки */
+.game-card__content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.game-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.game-card__name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    color: #111827;
+    line-height: 1.3;
+}
+
+.game-card__type {
+    background-color: #e0e7ff;
+    color: #4338ca;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.game-card__description {
+    font-size: 0.875rem;
+    color: #4b5563;
+    line-height: 1.4;
+    margin: 0 0 16px 0;
+    
+    /* Обрезка слишком длинного текста до 3 строк */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Детали игры (время, площадка и т.д.) */
+.game-card__details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background-color: #f9fafb;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 0.8rem;
+    color: #374151;
+}
+
+.game-card__detail-item {
+    display: flex;
+    align-items: center;
+}
+
+/* Футер (Цена + Кнопка) */
+.game-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f3f4f6;
+    padding-top: 12px;
+    margin-top: auto;
+}
+
+.game-card__price-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card__cost {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.game-card__price-period {
+    font-size: 0.7rem;
+    color: #9ca3af;
+}
+
+.game-card__buy {
+    background-color: #4f46e5;
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.game-card__buy:hover {
+    background-color: #4338ca;
+}
+
+.game-card__buy:active {
+    transform: scale(0.98);
+}
